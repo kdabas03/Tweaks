@@ -1,0 +1,10 @@
+Package: com.cheaterstar.hapticvolume
+Name: Haptic Volume
+Architecture: iphoneos-arm
+Description: Adds haptic feedback to both volume buttons.
+Maintainer: Kartik Dabas
+Author: Kartik Dabas
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000)
+Version: 1.0.0-3+debug
+Installed-Size: 136
