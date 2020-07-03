@@ -5,7 +5,7 @@
 //NSDicitionary *bundleDefaults =[[NSUserDefaults standardUserDefaults] persistentDomainForName:@"com.cheaterstar.hapticvolprefs"];
 //id isEnabled = [[bundleDefaults valueForKey:@"isEnabled"]]
 
-//credit to iCrazeiOS
+
 //isEnabled = [prefs objectForKey:@"isEnabled"] ? [[prefs objectForKey:@"isEnabled"] boolValue] : YES;
 
 -(void)increaseVolume {
