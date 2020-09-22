@@ -1,0 +1,9 @@
+Package: com.cheaterstar.vibratingcalc
+Name: Vibrating Calc
+Version: 1.0.0
+Architecture: iphoneos-arm
+Description: Adds Vibrations to Calculator Buttons 
+Maintainer: Kartik Dabas
+Author: Kartik Dabas
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000)
