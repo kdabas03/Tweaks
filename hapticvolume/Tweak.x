@@ -1,25 +1,59 @@
+#import "Tweak.h"
 #import <AudioToolbox/AudioToolbox.h>
+
+%group tweak
 %hook SBVolumeControl
-//static BOOL isEnabled;
 
-//NSDicitionary *bundleDefaults =[[NSUserDefaults standardUserDefaults] persistentDomainForName:@"com.cheaterstar.hapticvolprefs"];
-//id isEnabled = [[bundleDefaults valueForKey:@"isEnabled"]]
+- (void)increaseVolume {
 
-
-//isEnabled = [prefs objectForKey:@"isEnabled"] ? [[prefs objectForKey:@"isEnabled"] boolValue] : YES;
-
--(void)increaseVolume {
-        %orig;
-        // Checks if tweak is enabled
-//        if ([isEnabled isEqual:@1]) {
-                AudioServicesPlaySystemSound(1519);
-//        }
+	%orig;
+	preferencesChanged();
+	if(enabled){
+		if(self._effectiveVolume == 1 && biggerVibration){
+			AudioServicesPlaySystemSound(1521);
+		} else if(1 == 1){
+			if(tapticStrength == 0){
+				AudioServicesPlaySystemSound(1519);
+			} else if(tapticStrength == 1){
+				AudioServicesPlaySystemSound(1520);
+			} else if(tapticStrength == 2){
+				AudioServicesPlaySystemSound(1521);
+			} else {
+				AudioServicesPlaySystemSound(1519);
+			}
+		} else {
+			vibrate(0.025, 0.05, 1);
+		}
+	}
 }
--(void)decreaseVolume {
-        %orig;
-        // Checks if tweak is enabled
-//        if ([isEnabled isEqual:@1]) {
-                 AudioServicesPlaySystemSound(1519);
-//       }
+
+- (void)decreaseVolume {
+
+	%orig;
+	preferencesChanged();
+	if(enabled){
+		if(self._effectiveVolume == 0 && biggerVibration){
+			AudioServicesPlaySystemSound(1521);
+		} else if(1 == 1){
+			if(tapticStrength == 0){
+				AudioServicesPlaySystemSound(1519);
+			} else if(tapticStrength == 1){
+				AudioServicesPlaySystemSound(1520);
+			} else if(tapticStrength == 2){
+				AudioServicesPlaySystemSound(1521);
+			} else {
+				AudioServicesPlaySystemSound(1519);
+			}
+		} else {
+			vibrate(0.025, 0.05, 1);
+		}
+	}
 }
+
 %end
+%end
+
+%ctor {
+	preferencesChanged();
+	%init(tweak);
+}

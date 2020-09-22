@@ -13,4 +13,5 @@ HapticVolume_CFLAGS = -fobjc-arc
 $(TWEAK_NAME)_FRAMEWORKS = AudioToolbox
 include $(THEOS_MAKE_PATH)/tweak.mk
 ##SUBPROJECTS += hapticvolprefs
+SUBPROJECTS += hapticvolprefs
 ##include $(THEOS_MAKE_PATH)/aggregate.mk
